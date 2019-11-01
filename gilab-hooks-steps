@@ -1,0 +1,17 @@
+1. For creating hooks in gilab goto settings integrations and creatingate webhook with url .
+
+Env based jenkins job git webhook
+
+1. Copy the url(Build when a change is pushed to GitLab. GitLab webhook URL: https://jenkinstech.devopsprofessional.co.in/project/gitlab/addressbook-production-pipeline) in build triggers of  the jenkins job for the env based pipeline.
+2.Create webhook and copy the url and select branch in hook to trigger jenkins job when changes to aprticualr branch.
+
+Sprint based:
+For sprint based to read tag need to use git tag message plugin
+
+1. Copy jenkins build trggier gitlab for sprin based pipleine job create hook with tag push events.
+2. In jenkins job in build triggers gitlab hook advanced filter  branches by regex privde the regex:
+for dev .*r(\\d{2}\\-\\d{1,2}\\-\\d{1,2}\\-rc[\\d+])  ---- (r19-01-01-rc1)
+
+regex for sprint based branches:
+
+dev:    ":refs\/tags\/r(\d{2}\-\d{1,2}\-\d{1,2}\-rc[\d+])"
